@@ -1,0 +1,7 @@
+S BS(a) A(b) 
+A AF(a) B(b) 
+B B(b) F(c) 
+F 
+BS BS(a) AB(b) F(c) 
+AF AF(a) B(b) 
+AB AF(a) B(b) F(c) 

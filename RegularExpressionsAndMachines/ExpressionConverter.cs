@@ -20,7 +20,14 @@ namespace RegularExpressionsAndMachines
 				output.Write($"{state.Key} ");
 				foreach (KeyValuePair<string, string> stateAndTransition in state.Value.OrderBy(s => s.Value))
 				{
-					output.Write($"{stateAndTransition.Key}({stateAndTransition.Value}) ");
+					if (stateAndTransition.Key.Contains('\''))
+					{
+						output.Write($"{stateAndTransition.Key.Split("'")[0]}({stateAndTransition.Value}) ");
+					}
+					else
+					{
+						output.Write($"{stateAndTransition.Key}({stateAndTransition.Value}) ");
+					}
 				}
 				output.WriteLine();
 			}
@@ -38,7 +45,6 @@ namespace RegularExpressionsAndMachines
 				{
 					foreach ( var stateToTransition in state.Value )
 					{
-						string s = SortState(stateToTransition.Key);
 						if ( !states.ContainsKey( SortState(stateToTransition.Key) ) )
 						{
 							KeyValuePair<string, Dictionary<string, string>>
@@ -63,6 +69,11 @@ namespace RegularExpressionsAndMachines
 
 			foreach (char letter in toState)
 			{
+				if (letter == '\'')
+				{
+					continue;
+				}
+
 				foreach (var element in states[letter.ToString()])
 				{
 					if (!result.Value.Select( v => v.Value).Contains(element.Value))
@@ -112,7 +123,12 @@ namespace RegularExpressionsAndMachines
 
 		internal string SortState(string state)
 		{
+			if (state.Contains('\''))
+			{
+				state = state.Split("'")[0];
+			}
 			char[] stateArray = state.ToArray();
+			stateArray = stateArray.ToList().Distinct().ToArray();
 			Array.Sort(stateArray);
 			return new string(stateArray);
 		}

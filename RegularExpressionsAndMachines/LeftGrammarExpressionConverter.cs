@@ -46,7 +46,14 @@ namespace RegularExpressionsAndMachines
 
 						if (!statesMerged)
 						{
-							states[fromState].Add(state, transition);
+							if (states[fromState].ContainsKey(state))
+							{
+								states[fromState].Add(state + "'", transition);
+							}
+							else
+							{
+								states[fromState].Add(state, transition);
+							}
 						}
 					}
 					else

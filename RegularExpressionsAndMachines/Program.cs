@@ -31,13 +31,13 @@ namespace RegularExpressionsAndMachines
                     ExpressionConverter rightConverter = new LeftGrammarExpressionConverter();
                     strings.Remove(ExpressionType.LEFT_GRAMMAR);
                     Dictionary<string, Dictionary<string, string>> rightStates = rightConverter.ConvertExpressions(strings);
-                    rightConverter.PrintMachine(rightStates, output);
+                    rightConverter.PrintMachineMinimizationFormat(rightStates, output);
                     break;
                 case ExpressionType.RIGHT_GRAMMAR:
                     ExpressionConverter leftConverter = new RightGrammarExpressionConverter();
                     strings.Remove(ExpressionType.RIGHT_GRAMMAR);
                     Dictionary<string, Dictionary<string, string>> leftStates = leftConverter.ConvertExpressions(strings);
-                    leftConverter.PrintMachine(leftStates, output);
+                    leftConverter.PrintMachineMinimizationFormat(leftStates, output);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Invalid grammar type");

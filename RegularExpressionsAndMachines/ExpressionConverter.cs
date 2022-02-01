@@ -13,6 +13,49 @@ namespace RegularExpressionsAndMachines
 			throw new NotImplementedException();
 		}
 
+		public void PrintMachineMinimizationFormat(Dictionary<string, Dictionary<string, string>> states, StreamWriter output)
+		{
+			output.Write("  ");
+			foreach (string state in states.Keys)
+			{
+				output.Write($"{state} ");
+			}
+
+			output.WriteLine();
+
+			List<string> inputSignals = new List<string>();
+			foreach (var transition in states.Values)
+			{
+				foreach (string inputSignal in transition.Values)
+				{
+					if (!inputSignals.Contains(inputSignal))
+					{
+						inputSignals.Add(inputSignal);
+					}
+				}
+			}
+			
+			inputSignals.Sort();
+
+			foreach (string inputSignal in inputSignals)
+			{
+				output.Write($"{inputSignal} ");
+				foreach (var transition in states.Values)
+				{
+					if (transition.ContainsValue(inputSignal))
+					{
+						string state = transition.Where(t => t.Value == inputSignal).Select(t => t.Key).First();
+						output.Write($"{state} ");
+					}
+					else
+					{
+						output.Write("% ");
+					}
+				}
+				output.WriteLine();
+			}
+		}
+
 		public void PrintMachine(Dictionary<string, Dictionary<string, string>> states, StreamWriter output)
 		{
 			foreach (KeyValuePair<string, Dictionary<string, string>> state in states)
@@ -49,7 +92,10 @@ namespace RegularExpressionsAndMachines
 						{
 							KeyValuePair<string, Dictionary<string, string>>
 								result = GetFromDestinationStates(stateToTransition.Key, states);
-							newStates.Add(result.Key, result.Value);
+							if (!newStates.ContainsKey(result.Key))
+							{
+								newStates.Add(result.Key, result.Value);
+							}
 						}
 					}
 				}

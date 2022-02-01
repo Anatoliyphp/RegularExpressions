@@ -1,7 +1,3 @@
-S BS(a) A(b) 
-A AF(a) B(b) 
-B B(b) F(c) 
-F 
-BS BS(a) AB(b) F(c) 
-AF AF(a) B(b) 
-AB AF(a) B(b) F(c) 
+  A  B C  D F DF AB  CDF ABF AF 
+a AB F A  F % F  ABF AF  ABF AB 
+b DF C DF C % C  CDF CDF CDF DF 

@@ -1,4 +1,5 @@
 RG
-S -> aS | bA | aB
-A -> aA | bB | a
-B -> bB | c
+A -> b | aA | bD | aB
+B -> bC | a
+C -> aA | bD | b
+D -> bC | a

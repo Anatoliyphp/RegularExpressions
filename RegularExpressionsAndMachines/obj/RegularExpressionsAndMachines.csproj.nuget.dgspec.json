@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Анатолий\\RiderProjects\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj": {}
+    "C:\\Users\\Анатолий\\Documents\\GitHub\\RegularExpressions\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Анатолий\\RiderProjects\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj": {
+    "C:\\Users\\Анатолий\\Documents\\GitHub\\RegularExpressions\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Анатолий\\RiderProjects\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj",
+        "projectUniqueName": "C:\\Users\\Анатолий\\Documents\\GitHub\\RegularExpressions\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj",
         "projectName": "RegularExpressionsAndMachines",
-        "projectPath": "C:\\Users\\Анатолий\\RiderProjects\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj",
+        "projectPath": "C:\\Users\\Анатолий\\Documents\\GitHub\\RegularExpressions\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines.csproj",
         "packagesPath": "C:\\Users\\Анатолий\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Анатолий\\RiderProjects\\RegularExpressionsAndMachines\\RegularExpressionsAndMachines\\obj\\",
+        "outputPath": "C:\\Users\\Анатолий\\Documents\\GitHub\\RegularExpressions\\RegularExpressionsAndMachines\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Анатолий\\AppData\\Roaming\\NuGet\\NuGet.Config",
